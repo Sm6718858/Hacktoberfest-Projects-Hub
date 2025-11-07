@@ -1,16 +1,22 @@
 import React, { useState } from "react";
 import Logo from "../assets/logo_github_project_hub.png";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { ThemeContext } from "../context/ThemeContext";
+
 export default function Header() {
     let Links = [
         { name: "Home", link: "/" },
         { name: "Projects", link: "/Projects" },
         { name: "Contributors", link: "/Contributors" },
     ];
+    const { theme, toggleTheme } = useContext(ThemeContext);
+
     let [open, setOpen] = useState(false);
     return (
         <div className="shadow-md z-10 w-full fixed top-0 left-0">
-            <div className="md:flex items-center justify-between bg-gray-800 text-white py-4 md:px-10 px-7">
+            <div className="md:flex items-center justify-between bg-gray-800 dark:bg-gray-900 text-white dark:text-gray-200 py-4 md:px-10 px-7">
+
                 <div
                     className="font-bold text-2xl cursor-pointer flex items-center font-[Poppins] 
           text-white"
@@ -31,9 +37,8 @@ export default function Header() {
                 </div>
 
                 <ul
-                    className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-gray-800 text-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
-                        open ? "top-20 " : "top-[-490px]"
-                    }`}
+                    className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-gray-800 text-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? "top-20 " : "top-[-490px]"
+                        }`}
                 >
                     {Links.map((link) => (
                         <li
@@ -59,6 +64,15 @@ export default function Header() {
                             Github
                         </button>
                     </a>
+                    <li className="md:ml-8 text-xl md:my-0 my-7">
+                        <button
+                            onClick={toggleTheme}
+                            className="bg-gray-700 dark:bg-gray-200 text-white dark:text-black px-4 py-2 rounded-lg transition-all duration-300"
+                        >
+                            {theme === "light" ? "🌙 Dark" : "☀️ Light"}
+                        </button>
+                    </li>
+
                 </ul>
             </div>
         </div>

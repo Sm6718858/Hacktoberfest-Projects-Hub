@@ -1,20 +1,24 @@
 import React from "react";
 
-const ProjectCard = () => {
+const ProjectCard = ({name}) => {
   return (
-    <div className="card w-80 sm:w-96 h-fit flex flex-col border-1 rounded-lg overflow-hidden px-2 py-4 hover:scale-105 transition duration-300 bg-gradient-to-t from-[#654b0e] via-[#947511] to-[#ebd812] shadow-xl">
+    <div className="card w-80 sm:w-96 h-fit flex flex-col rounded-2xl overflow-hidden px-4 py-5 
+bg-white dark:bg-gray-800 text-black dark:text-white shadow-xl hover:scale-105 transition duration-300">
+
       <a href="https://hacktoberfestprojectshub.netlify.app/" target="_blank">
         <div className="header flex flex-row gap-2 items-center px-2 pb-2 w-full border-b-2">
-          <div className="relative border rounded-full w-16 h-16 p-1 flex items-center justify-center overflow-hidden">
+          <div className="relative bg-blue-600 dark:bg-blue-700 rounded-2xl px-3 py-1 text-white">
+
             <img
               src="/card_logo.png"
               alt="logo"
               className="relative rounded-full w-16 h-16 object-cover p-1"
             />
           </div>
-          <p className="relative font-semibold text-xl hover:text-white transition duration-300 hover:underline">
-            hack-it-up
+          <p className="relative font-semibold text-xl hover:text-white">
+            {name}
           </p>
+
         </div>
       </a>
 
@@ -42,7 +46,9 @@ const ProjectCard = () => {
       </div>
 
       <div className="card-footer flex flex-row justify-center items-center gap-10 mt-2">
-        <div className="border rounded-lg w-5/12 h-20 flex flex-row gap-1 items-center px-2">
+        <div className="border rounded-lg w-5/12 h-20 flex items-center px-3 
+border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-700">
+
           <div className="logo w-1/4 rounded-full">
             <img src="/star2.png" alt="star" className="relative" />
           </div>
@@ -51,7 +57,9 @@ const ProjectCard = () => {
             <p>stars</p>
           </div>
         </div>
-        <div className="border rounded-lg w-5/12 h-20 flex flex-row gap-1 items-center px-2">
+        <div className="border rounded-lg w-5/12 h-20 flex items-center px-3 
+border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-700">
+
           <div className="logo w-1/4 rounded-full">
             <img src="/radio2.png" alt="issue" className="relative" />
           </div>

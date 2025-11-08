@@ -22,11 +22,14 @@ const Projects = () => {
 
       <div className="mb-8">
         <input
-          type="text"
-          placeholder="Search Projects..."
-          className="px-4 py-2 w-full sm:w-1/2 border border-gray-300 dark:border-gray-600 
-  bg-white dark:bg-gray-700 text-black dark:text-white rounded-lg shadow"
-        />
+  type="text"
+  placeholder="Search Projects..."
+  value={search}
+  onChange={(e) => setSearch(e.target.value)}
+  className="px-4 py-2 w-full sm:w-1/2 border border-gray-300 dark:border-gray-600 
+bg-white dark:bg-gray-700 text-black dark:text-white rounded-lg shadow"
+/>
+
 
       </div>
 
